@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: E-Learning Platform
+  version: '1.0'
+  description: |-
+    This documentation explains how to successfully call the E-Learning Platform API with your app. The E-Learning Platform API allows simple queries to retrieve all the necessary data such courses on various subjects. Each course will be devided into a configurable number of modules, and each module will contain a configurable number of contents.
+
+    > Before digging in, it's important to know that the API is focused on simplicity and complex. This means that it will be simple to use with no means of complications, it can be used by both simple and sophisicated applications.
+  contact:
+    name: Mbongeni Mankge
+    url: mbongenidev.com
+    email: mbongeni.dev@gmail.com
+  license:
+    name: License(MIT)
+servers:
+  - url: 'http://localhost:3000'
+paths: {}
+components:
+  schemas: {}
+  securitySchemes: {}
