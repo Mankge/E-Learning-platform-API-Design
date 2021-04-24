@@ -196,6 +196,10 @@ components:
       title: File
       type: object
       description: 'This model is used to store files, such as word documents, downloadable files, PDFs etc.'
+      x-examples:
+        File-example:
+          id: 32
+          file: static/file/activityOne.pdf
       properties:
         id:
           type: number
