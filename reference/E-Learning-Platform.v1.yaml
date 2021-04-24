@@ -175,4 +175,68 @@ components:
           title: Introduction
           created: 12-04-2021
           updated: 24-04-2021
+    Text:
+      title: Text
+      type: object
+      description: A text content to store text content.
+      properties:
+        id:
+          type: integer
+          example: 78
+          description: A unique id identifier for each text.
+        content:
+          type: string
+          example: This section is about data structures and algorithms...
+          description: The text content field with unlimited number of characters.
+      x-examples:
+        Text-example:
+          id: 78
+          content: This section is about data structures and algorithms...
+    File:
+      title: File
+      type: object
+      description: 'This model is used to store files, such as word documents, downloadable files, PDFs etc.'
+      properties:
+        id:
+          type: number
+          example: 32
+          description: A unique id identifier for each file.
+        file:
+          type: string
+          example: static/file/activityOne.pdf
+          description: A path to the file.
+    Image:
+      title: Image
+      type: object
+      description: The model to store image files.
+      properties:
+        id:
+          type: number
+          example: 78
+          description: A unique id of each image file.
+        file:
+          type: string
+          example: static/chapter-1/image1.png
+          description: A file path that leads to the image file.
+      x-examples:
+        Image-Example:
+          id: 78
+          file: static/chapter-1/image1.png
+    Video:
+      title: Video
+      type: object
+      description: This model is useful to store videos. We use the URL field to provide a video URL in order to embed it.
+      properties:
+        id:
+          type: number
+          example: 98
+          description: A unique identifier for each video.
+        url:
+          type: string
+          example: 'https://api.elearninng/s3bucket/example.mp4'
+          description: The url which provides the video.
+      x-examples:
+        Video-Example:
+          id: 98
+          url: 'https://api.elearninng/s3bucket/example.mp4'
   securitySchemes: {}
