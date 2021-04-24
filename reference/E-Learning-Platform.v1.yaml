@@ -143,4 +143,36 @@ components:
           description: A positive integer field gto store the primary key of the elated object.
         item:
           $ref: ''
+    ItemBase:
+      title: ItemBase
+      type: object
+      description: This is an abstract model that provides the common fields for all the divise content models.
+      properties:
+        id:
+          type: number
+          example: 33
+          description: A unique identifier for each item content type.
+        owner:
+          type: string
+          description: The name of the content item owner. Basically someone who created the item.
+          example: Mbongeni Mankge
+        title:
+          type: string
+          example: Introduction
+          description: A unique title for the content item.
+        created:
+          type: string
+          example: 12-04-2021
+          description: The date the content was first created by the user.
+        updated:
+          type: string
+          example: 24-04-2021
+          description: The date at which the content was modified or updated.
+      x-examples:
+        ItemBase-Example:
+          id: 33
+          owner: Mbongeni Mankge
+          title: Introduction
+          created: 12-04-2021
+          updated: 24-04-2021
   securitySchemes: {}
