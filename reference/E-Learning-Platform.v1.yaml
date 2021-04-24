@@ -16,5 +16,101 @@ servers:
   - url: 'http://localhost:3000'
 paths: {}
 components:
-  schemas: {}
+  schemas:
+    Course:
+      title: Course
+      type: object
+      description: 'The online-learnig platform will offer courses on various subjects. Each course will be divided into a configurable number of modules/chapter, and each module will contain a configurable number of contents. The contents will be of various types: text, file, image, or video.'
+      properties:
+        id:
+          type: number
+          example: 123
+          description: A unique identifier for the each course.
+        owner:
+          type: string
+          example: Mbongeni Mankge
+          description: The individual who created the course.
+        subject:
+          $ref: '#/components/schemas/Subject'
+        title:
+          type: string
+          example: Software Development
+          description: Title of the course.
+        slug:
+          type: string
+          example: software-development
+        overview:
+          type: string
+          example: This course teaches all the fundamental concepts required to create your first website.
+          description: A brief description about the course.
+        created:
+          type: string
+          example: 09-04-2021
+          description: The date at which the course was created by the owner.
+      required:
+        - id
+        - owner
+        - subject
+        - title
+        - slug
+        - overview
+      x-examples:
+        Course-example:
+          id: 123
+          owner: Mbongeni Mankge
+          subject:
+            id: 89
+            title: Computer Science and Information Technology
+            slug: computer-science-and-Information-technology
+          title: Software Development
+          slug: software-development
+          overview: This course teaches all the fundamental concepts required to create your first website.
+          created: 09-04-2021
+    Subject:
+      title: Subject
+      type: object
+      description: 'A unique subject model which offers different courses owned by different entities. The subject can be added by the system administrator, whereas the courses under that particular subject can be added by different instructors who are registered on the system and have permissions to do so.'
+      properties:
+        id:
+          type: integer
+          example: 89
+          description: A unique id for each subject registered on the system.
+        title:
+          type: string
+          example: Computer Science and Information Technology
+          description: A unique subject title.
+        slug:
+          type: string
+          example: computer-science-and-Information-technology
+          description: A unique identifier for each subject. More helpful for differianting web address end-points.
+      x-examples:
+        Sample Example:
+          id: 89
+          title: Computer Science and Information Technology
+          slug: computer-science-and-Information-technology
+    Module:
+      title: Module
+      type: object
+      x-examples:
+        Module-example:
+          id: 663
+          title: Data structures and Algorithms
+          description: Learning and understanding data structures and algorithms is an important skill for writing both optimized and bug-free code.
+      properties:
+        id:
+          type: integer
+          example: 663
+          description: A unique identifier for each module.
+        title:
+          type: string
+          example: Data structures and Algorithms
+          description: A unique title for each module.
+        description:
+          type: string
+          example: Learning and understanding data structures and algorithms is an important skill for writing both optimized and bug-free code.
+          description: A short description explaining what the module is about.
+      required:
+        - id
+        - title
+      description: 'The module model is a basically a chapter that contains a configuarable number of contents. The contents will be of various types such as images, text, files(documents) or video.'
   securitySchemes: {}
