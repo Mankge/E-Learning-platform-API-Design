@@ -96,6 +96,8 @@ components:
           id: 663
           title: Data structures and Algorithms
           description: Learning and understanding data structures and algorithms is an important skill for writing both optimized and bug-free code.
+          order: 1
+      description: 'The module model is a basically a chapter that contains a configuarable number of contents. The contents will be of various types such as images, text, files(documents) or video.'
       properties:
         id:
           type: integer
@@ -109,23 +111,28 @@ components:
           type: string
           example: Learning and understanding data structures and algorithms is an important skill for writing both optimized and bug-free code.
           description: A short description explaining what the module is about.
+        order:
+          type: integer
+          example: 1
+          description: An order value of the module object with respect to other objects.
       required:
         - id
         - title
-      description: 'The module model is a basically a chapter that contains a configuarable number of contents. The contents will be of various types such as images, text, files(documents) or video.'
     Content:
       title: Content
       type: object
       x-examples:
-        Content-Example:
+        Content-example:
           id: 366
           module:
             id: 663
             title: Data structures and Algorithms
             description: Learning and understanding data structures and algorithms is an important skill for writing both optimized and bug-free code.
+            order: 1
           content_type: null
           object_id: 563
           item: null
+          order: '2'
       description: 'This is a versatile data model that allows one to store different or diverse content. For an instance, this model can represent a text, file or video etc. The Content model contains contents, so you define a Foreign Key field that points to the Module module. We then set a generic relation to associate objects from different models that represent different types of content. A different model for each type of content will be used. The content models will have some common fields but they will differ in the actual data they can store.'
       properties:
         id:
@@ -143,6 +150,10 @@ components:
           description: A positive integer field gto store the primary key of the elated object.
         item:
           $ref: ''
+        order:
+          type: string
+          example: '2'
+          description: An order value of the content object with respect to other objects of the same group.
     ItemBase:
       title: ItemBase
       type: object
